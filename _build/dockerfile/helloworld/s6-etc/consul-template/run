@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /bin/consul-template -consul=$CONSUL -template "/helloworld/appsettings.ctmpl:/helloworld/appsettings.json:pkill dotnet"

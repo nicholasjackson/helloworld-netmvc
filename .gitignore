@@ -1,0 +1,17 @@
+# Application binaries
+/src/helloworld/bin
+/src/helloworld/obj
+/test/helloworld.Tests/bin
+/test/helloworld.Tests/obj
+/.nuget
+
+# Application build assets
+/_build/dockerfile/helloworld/bin
+/_build/dockerfile/helloworld/swagger_spec
+/_build/dockerfile/helloworld/swagger_spec
+/_build/dockerfile/helloworld/project.json
+/_build/dockerfile/helloworld/project.lock.json
+/_build/dockerfile/helloworld/web.config
+
+# Pesky mac files
+.DS_Store

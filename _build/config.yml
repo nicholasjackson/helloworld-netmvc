@@ -1,0 +1,53 @@
+---
+application_name: 'helloworld'
+namespace: 'HelloWorld'
+generator_name: minke-generator-netmvc
+docker_registry:
+  url: 
+  user: 
+  password: 
+  email: 
+  namespace: 
+docker:
+  application_docker_file: './dockerfile/helloworld/'
+  application_compose_file: './dockercompose/helloworld/docker-compose.yml'
+fetch:
+  enabled: true
+test:
+  enabled: true
+build:
+  post:
+    copy:
+      -
+        from: '../src/helloworld/bin'
+        to: './dockerfile/helloworld'
+      -
+        from: '../src/helloworld/project.json'
+        to: './dockerfile/helloworld'
+      -
+        from: '../src/helloworld/web.config'
+        to: './dockerfile/helloworld'
+      -
+        from: './swagger_spec/swagger.yml'
+        to: './dockerfile/helloworld/swagger_spec'
+run:
+  pre:
+    consul_loader:
+      config_file: './consul_keys.yml'
+      url:
+        address: consul
+        port: 8500
+        type: private
+cucumber:
+  pre:
+    consul_loader:
+      config_file: './consul_keys.yml'
+      url:
+        address: consul
+        port: 8500
+        type: private
+    health_check:
+      address: helloworld
+      port: 5000
+      path: /v1/health
+      type: private

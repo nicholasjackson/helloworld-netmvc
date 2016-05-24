@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /helloworld
+exec dotnet run -c Release
