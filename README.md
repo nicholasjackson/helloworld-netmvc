@@ -1,6 +1,5 @@
 # Example Microservice for Minke and Minke-Generator-NetMVC
-
-
+[![CircleCI](https://circleci.com/gh/nicholasjackson/helloworld-netmvc.svg?style=svg)](https://circleci.com/gh/nicholasjackson/helloworld-netmvc)
 
 - [https://github.com/nicholasjackson/minke](https://github.com/nicholasjackson/minke)
 - [https://github.com/nicholasjackson/minke-generator-netmvc](https://github.com/nicholasjackson/minke-generator-netmvc)
